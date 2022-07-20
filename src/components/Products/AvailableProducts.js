@@ -1,21 +1,14 @@
 import React from 'react';
-import Card from '../UI/Card';
 import classes from './AvailableProducts.module.css';
+import data from '../../product_data.json';
+import ProductItem from './ProductItem/ProductItem';
 
 const AvailableProducts = (props) => {
-  return (
-    <section className={classes.products}>
-      <Card>
-        <div>
-          <img src="#" alt="" />
-        </div>
-        <div>
-          <span>Product Name</span>
-          <span>Price</span>
-        </div>
-      </Card>
-    </section>
-  );
+  const productList = data.map((item) => (
+    <ProductItem key={item.title} item={item} />
+  ));
+
+  return <section className={classes.products}>{productList}</section>;
 };
 
 export default AvailableProducts;

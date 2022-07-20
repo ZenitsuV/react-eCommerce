@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: right;
+  margin: 5px;
+}
+
+.heart {
+  width: 20px;
+  height: 20px;
+  background-color: #e0e0e0;
+  position: relative;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 8px #e0e0e0;
+}
+
+.heart::before,
+.heart::after {
+  width: 20px;
+  height: 20px;
+  background-color: #e0e0e0;
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #e0e0e0;
+}
+
+.heart::before {
+  bottom: 0px;
+  left: -10px;
+}
+
+.heart::after {
+  bottom: 0px;
+  top: -10px;
+}

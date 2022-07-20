@@ -1,8 +1,10 @@
 .products {
-  max-width: 60rem;
-  width: 90%;
-  margin: 2rem auto;
-  animation: products-appear 1s ease-out forwards;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 22rem);
+  grid-auto-rows: 25rem;
+  justify-content: center;
+  gap: 1rem 1rem;
+  margin-top: 6rem;
 }
 
 .ProductsLoading {
