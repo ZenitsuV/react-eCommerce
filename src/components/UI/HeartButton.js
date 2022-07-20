@@ -3,8 +3,8 @@ import classes from './HeartButton.module.css';
 
 const HeartButton = () => {
   return (
-    <div class={classes.container}>
-      <div class={classes.heart}></div>
+    <div className={classes.container}>
+      <div className={classes.heart}></div>
     </div>
   );
 };

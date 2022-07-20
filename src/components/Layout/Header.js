@@ -1,11 +1,16 @@
 import React, { Fragment } from 'react';
 import classes from './Header.module.css';
+import { Link } from 'react-router-dom';
+import HeaderCartButton from './HeaderCartButton';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Fragment>
       <header className={classes.header}>
-        <h1>Online Shopping</h1>
+        <Link to="/">
+          <h1>Online Shopping</h1>
+        </Link>
+        <HeaderCartButton onClick={props.onShowCart} />
       </header>
     </Fragment>
   );
