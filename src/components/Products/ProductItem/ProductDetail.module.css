@@ -8,10 +8,46 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   background-color: white;
-  width: 90%;
-  margin: 7.5rem 1rem 0 5.5rem;
-  height: 50rem;
+  height: 30rem;
+  width: 70rem;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.image,
+.details {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  height: 25rem;
+}
+
+.title {
+  font-size: 2em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+.type {
+  font-size: 1.25em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.description {
+  font-size: 0.95em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+}
+
+.price {
+  font-size: 1.25em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

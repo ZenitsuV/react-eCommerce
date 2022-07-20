@@ -9,7 +9,20 @@ const ProductDetail = (props) => {
 
   let content = (
     <div className={classes.container}>
-      <div className={classes.card}>{props.children}</div>
+      <div className={classes.card}>
+        <div className={classes.image}>
+          <img
+            className={classes.img}
+            src="https://thumbs.dreamstime.com/b/shopping-basket-grocery-food-32542097.jpg"
+          />
+        </div>
+        <div className={classes.details}>
+          <p className={classes.title}>Title</p>
+          <p className={classes.type}>Type</p>
+          <p className={classes.description}>Description</p>
+          <p className={classes.price}>Price</p>
+        </div>
+      </div>
     </div>
   );
 
