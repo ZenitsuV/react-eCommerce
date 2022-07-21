@@ -1,6 +1,4 @@
 import React, { useRef, useState } from 'react';
-import Input from '../../UI/Input';
-import classes from '../../UI/Input.module.css';
 import classes from './ProductForm.module.css';
 
 const ProductForm = (props) => {
@@ -26,8 +24,6 @@ const ProductForm = (props) => {
     const value = e.target.value;
     setCounter(parseInt(value));
   };
-
-  console.log(counter);
 
   const submitHandler = (e) => {
     e.preventDefault();
