@@ -32,6 +32,7 @@
   line-height: 19px;
   color: #fff;
   border-radius: 7px 0px 0px 7px;
+  cursor: pointer;
 }
 
 .increment {
@@ -44,4 +45,5 @@
   line-height: 25px;
   color: #fff;
   border-radius: 0px 7px 7px 0px;
+  cursor: pointer;
 }

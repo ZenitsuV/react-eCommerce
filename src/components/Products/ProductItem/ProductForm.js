@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Input from '../../UI/Input';
-import classes from './Input.module.css';
+import classes from '../../UI/Input.module.css';
 import classes from './ProductForm.module.css';
 
 const ProductForm = (props) => {
@@ -13,8 +13,21 @@ const ProductForm = (props) => {
   };
 
   const decrement = () => {
-    setCounter((c) => c - 1);
+    setCounter((c) => {
+      if (c * 1 > 1) {
+        return c * 1 - 1;
+      } else {
+        return c;
+      }
+    });
   };
+
+  const inputChangeHandler = (e) => {
+    const value = e.target.value;
+    setCounter(parseInt(value));
+  };
+
+  console.log(counter);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -43,10 +56,12 @@ const ProductForm = (props) => {
         </div>
         <input
           type="number"
-          id={`amount_` + props.id}
+          id={'amount_' + props.id}
           min="1"
           max="5"
-          step="5"
+          step="1"
+          value={counter}
+          onChange={inputChangeHandler}
         />
         <div onClick={increment} className={classes.increment}>
           +

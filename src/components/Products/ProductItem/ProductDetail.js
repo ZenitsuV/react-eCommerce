@@ -8,7 +8,7 @@ const ProductDetail = (props) => {
   const params = useParams();
 
   const productData = data.filter((item) => item.id === params.productId);
-  const { title, type, description, price } = productData[0];
+  const { id, title, type, description, price } = productData[0];
 
   function capitalize(s) {
     return s && s[0].toUpperCase() + s.slice(1);
@@ -33,7 +33,7 @@ const ProductDetail = (props) => {
             <p className={classes.price}>₹{price}</p>
           </div>
           <div className={classes.form}>
-            <ProductForm id={props.id} onAddToCart={addToCartHandler} />
+            <ProductForm id={id} onAddToCart={addToCartHandler} />
           </div>
         </div>
       </div>

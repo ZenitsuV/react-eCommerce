@@ -29,7 +29,7 @@ const ProductItem = (props) => {
         <span>{price}</span>
       </div>
       <div>
-        <ProductForm id={props.id} onAddToCart={addToCartHandler} />
+        <ProductForm id={props.item.id} onAddToCart={addToCartHandler} />
       </div>
     </Card>
   );
