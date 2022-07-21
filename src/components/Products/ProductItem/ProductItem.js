@@ -8,14 +8,7 @@ import { Link } from 'react-router-dom';
 const ProductItem = (props) => {
   const price = `₹ ${props.item.price.toFixed(2)}`;
 
-  const addToCartHandler = (amount) => {
-    ctx.addItem({
-      id: props.id,
-      name: props.meal.name,
-      amount: amount,
-      price: props.meal.price,
-    });
-  };
+  const addToCartHandler = (amount) => {};
 
   return (
     <Card key={props.item.title}>

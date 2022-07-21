@@ -14,14 +14,7 @@ const ProductDetail = (props) => {
     return s && s[0].toUpperCase() + s.slice(1);
   }
 
-  const addToCartHandler = (amount) => {
-    ctx.addItem({
-      id: props.id,
-      name: props.meal.name,
-      amount: amount,
-      price: props.meal.price,
-    });
-  };
+  const addToCartHandler = (amount) => {};
 
   let content = (
     <div className={classes.container}>
