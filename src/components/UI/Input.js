@@ -6,7 +6,9 @@ const Input = React.forwardRef((props, ref) => {
     <>
       <div className={classes.input}>
         <label htmlFor={props.input.id}>{props.label}</label>
+        <div className={classes.decrement}>-</div>
         <input ref={ref} {...props.input} />
+        <div className={classes.increment}>+</div>
         <button>+ Add</button>
       </div>
     </>

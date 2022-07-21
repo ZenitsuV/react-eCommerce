@@ -1,6 +1,6 @@
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 22rem);
+  grid-template-columns: repeat(auto-fit, 25rem);
   grid-auto-rows: 25rem;
   justify-content: center;
   gap: 1rem 1rem;

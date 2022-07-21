@@ -23,7 +23,7 @@ const ProductItem = (props) => {
         <HeartButton />
       </div>
       <div>
-        <Link to="/product-detail/p1">
+        <Link to={`/product-detail/${props.item.id}`}>
           <img
             src="https://thumbs.dreamstime.com/b/shopping-basket-grocery-food-32542097.jpg"
             alt=""
