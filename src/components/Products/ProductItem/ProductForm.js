@@ -28,11 +28,11 @@ const ProductForm = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const enteredAmount = amountInputRef.current.value;
+    const enteredAmount = counter;
     const enteredAmountNumber = +enteredAmount;
 
     if (
-      enteredAmount.trim().length == 0 ||
+      enteredAmount.length == 0 ||
       enteredAmountNumber < 1 ||
       enteredAmountNumber > 5
     ) {

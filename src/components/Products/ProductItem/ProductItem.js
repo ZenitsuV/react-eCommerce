@@ -4,11 +4,23 @@ import classes from './ProductItem.module.css';
 import ProductForm from './ProductForm';
 import HeartButton from '../../UI/HeartButton';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../../store/cart';
 
 const ProductItem = (props) => {
+  const disPatch = useDispatch();
   const price = `₹ ${props.item.price.toFixed(2)}`;
 
-  const addToCartHandler = (amount) => {};
+  const addToCartHandler = (amount) => {
+    disPatch(
+      cartActions.addItem({
+        id: props.id,
+        name: props.meal.name,
+        amount: amount,
+        price: props.meal.price,
+      })
+    );
+  };
 
   return (
     <Card key={props.item.title}>
