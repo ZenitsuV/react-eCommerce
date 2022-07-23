@@ -28,8 +28,13 @@
   transform: rotateZ(0deg) translateY(1rem) translateX(-1rem);
 }
 
-.header a {
+.header .logo {
   text-decoration: none;
   color: white;
   font-weight: bold;
+}
+
+.header .nav {
+  text-decoration: none;
+  color: white;
 }
