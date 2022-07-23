@@ -3,8 +3,11 @@ import { useParams } from 'react-router-dom';
 import classes from './ProductDetail.module.css';
 import data from '../../../product_data.json';
 import ProductForm from './ProductForm';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../../store/cart';
 
 const ProductDetail = (props) => {
+  const disPatch = useDispatch();
   const params = useParams();
 
   const productData = data.filter((item) => item.id === params.productId);
@@ -14,7 +17,16 @@ const ProductDetail = (props) => {
     return s && s[0].toUpperCase() + s.slice(1);
   }
 
-  const addToCartHandler = (amount) => {};
+  const addToCartHandler = (amount) => {
+    disPatch(
+      cartActions.addItem({
+        id: id,
+        name: title,
+        amount: amount,
+        price: price,
+      })
+    );
+  };
 
   let content = (
     <div className={classes.container}>

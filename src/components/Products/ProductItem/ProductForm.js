@@ -1,8 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import classes from './ProductForm.module.css';
 
 const ProductForm = (props) => {
-  const amountInputRef = useRef();
   const [isAmountValid, setIsAmountValid] = useState(true);
   const [counter, setCounter] = useState(1);
 
@@ -41,6 +40,7 @@ const ProductForm = (props) => {
     }
 
     props.onAddToCart(enteredAmountNumber);
+    setCounter(1);
   };
 
   return (

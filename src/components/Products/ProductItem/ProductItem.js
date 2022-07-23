@@ -14,10 +14,10 @@ const ProductItem = (props) => {
   const addToCartHandler = (amount) => {
     disPatch(
       cartActions.addItem({
-        id: props.id,
-        name: props.meal.name,
+        id: props.item.id,
+        name: props.item.title,
         amount: amount,
-        price: props.meal.price,
+        price: props.item.price,
       })
     );
   };

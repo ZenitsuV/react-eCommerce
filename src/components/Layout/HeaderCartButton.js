@@ -1,19 +1,20 @@
 import React, { useContext, useEffect, useState } from 'react';
 import CartIcon from '../Cart/CartIcon';
 import classes from './HeaderCartButton.module.css';
+import { useSelector } from 'react-redux';
 
 const HeaderCartButton = (props) => {
-  //const cartCtx = useContext(CartContext);
+  const items = useSelector((state) => state.cart.items);
   const [btnIsHighlighted, seBtnIsHighlighted] = useState(false);
-  //const { items } = cartCtx;
-  /* const numberOfCartItems = items.reduce((cartNumber, item) => {
+
+  const numberOfCartItems = items.reduce((cartNumber, item) => {
     return cartNumber + item.amount;
-  }, 0);  */
+  }, 0);
 
   const btnClasses = `${classes.button} ${
     btnIsHighlighted ? classes.bump : ''
   }`;
-  /*
+
   useEffect(() => {
     if (items.length === 0) {
       return;
@@ -27,7 +28,7 @@ const HeaderCartButton = (props) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [items]); */
+  }, [items]);
 
   return (
     <button className={btnClasses} onClick={props.onClick}>
@@ -35,7 +36,7 @@ const HeaderCartButton = (props) => {
         <CartIcon />
       </span>
       <span>Your Cart</span>
-      <span className={classes.badge}>{0}</span>
+      <span className={classes.badge}>{numberOfCartItems}</span>
     </button>
   );
 };
