@@ -1,12 +1,22 @@
-import React from 'react';
-import Card from '../UI/Card';
+import React, { useRef } from 'react';
+import classes from './AddProductForm.module.css';
 
-const AddProduct = () => {
+const AddProductForm = () => {
+  const nameInputRef = useRef();
+  const imageInputRef = useRef();
+  const priceInputRef = useRef();
+  const typeInputRef = useRef();
+  const descriptionInputRef = useRef();
+
   const submitHandler = (e) => {};
 
   return (
-    <Card>
+    <div className={classes.card}>
       <form className={classes.form} onSubmit={submitHandler}>
+        <div className={classes.control}>
+          <label htmlFor="id">Product ID</label>
+          <input type="text" required id="id" disabled />
+        </div>
         <div className={classes.control}>
           <label htmlFor="name">Product Name</label>
           <input type="text" required id="name" ref={nameInputRef} />
@@ -33,11 +43,11 @@ const AddProduct = () => {
           ></textarea>
         </div>
         <div className={classes.actions}>
-          <button>Add Meetup</button>
+          <button>Add Product</button>
         </div>
       </form>
-    </Card>
+    </div>
   );
 };
 
-export default AddProduct;
+export default AddProductForm;

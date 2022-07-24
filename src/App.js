@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './components/Layout/Header';
 import Products from './components/Products/Products';
+import NewProduct from './components/Products/NewProduct';
 import ProductDetail from './components/Products/ProductItem/ProductDetail';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
@@ -27,6 +28,7 @@ export default function App() {
             path="/product-detail/:productId"
             element={<ProductDetail />}
           />
+          <Route path="/new-product" element={<NewProduct />} />
         </Routes>
       </main>
     </div>

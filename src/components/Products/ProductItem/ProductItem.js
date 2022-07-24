@@ -4,11 +4,12 @@ import classes from './ProductItem.module.css';
 import ProductForm from './ProductForm';
 import HeartButton from '../../UI/HeartButton';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../../store/cart';
 
 const ProductItem = (props) => {
   const disPatch = useDispatch();
+
   const price = `₹ ${props.item.price.toFixed(2)}`;
 
   const addToCartHandler = (amount) => {
@@ -25,7 +26,7 @@ const ProductItem = (props) => {
   return (
     <Card key={props.item.title}>
       <div>
-        <HeartButton />
+        <HeartButton onHeartClick={props.onHeartClick} />
       </div>
       <div>
         <Link to={`/product-detail/${props.item.id}`}>

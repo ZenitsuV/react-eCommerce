@@ -10,7 +10,7 @@ const Header = (props) => {
         <Link to="/" className={classes.logo}>
           <h1>Online Shopping</h1>
         </Link>
-        <Link to="/" className={classes.nav}>
+        <Link to="/new-product" className={classes.nav}>
           <h1>New Product</h1>
         </Link>
         <HeaderCartButton onClick={props.onShowCart} />
