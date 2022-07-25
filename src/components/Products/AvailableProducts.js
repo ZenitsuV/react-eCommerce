@@ -5,7 +5,7 @@ import ProductItem from './ProductItem/ProductItem';
 
 const AvailableProducts = (props) => {
   const productList = data.map((item) => (
-    <ProductItem key={item.title} item={item} />
+    <ProductItem key={item.title} id={item.title} item={item} />
   ));
 
   return <section className={classes.products}>{productList}</section>;

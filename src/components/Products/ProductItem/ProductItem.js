@@ -10,8 +10,18 @@ import { favActions } from '../../../store/favourite';
 
 const ProductItem = (props) => {
   const disPatch = useDispatch();
+  const favouriteItems = useSelector((state) => state.favourite.favouriteItems);
 
-  const itemIsFavourite = disPatch(favActions.itemIsFavourite(props.item.id));
+  const isItemFavourite = (items, id) => {
+    if (items.length > 0) return items.some((item) => item.id === id);
+    else return false;
+  };
+  const itemIsFavourite = isItemFavourite(favouriteItems, props.item.id);
+
+  let cssClass;
+  if (itemIsFavourite) cssClass = 'heart_selected';
+  else cssClass = 'heart_nonselected';
+
   const toggleFavouriteItem = () => {
     if (itemIsFavourite) {
       disPatch(favActions.removeFavouriteItem(props.item.id));
@@ -40,7 +50,7 @@ const ProductItem = (props) => {
   return (
     <Card key={props.item.title}>
       <div>
-        <HeartButton onClick={toggleFavouriteItem} />
+        <HeartButton onHeartClick={toggleFavouriteItem} cssClass={cssClass} />
       </div>
       <div>
         <Link to={`/product-detail/${props.item.id}`}>

@@ -1,10 +1,12 @@
 import React from 'react';
 import classes from './HeartButton.module.css';
 
-const HeartButton = ({ onHeartClick }) => {
+const HeartButton = (props) => {
+  const cssClassName = props.cssClass;
+
   return (
     <div className={classes.container}>
-      <div className={classes.heart_nonselected} onClick={onHeartClick}></div>
+      <div className={classes[cssClassName]} onClick={props.onHeartClick}></div>
     </div>
   );
 };
