@@ -6,9 +6,23 @@ import HeartButton from '../../UI/HeartButton';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../../store/cart';
+import { favActions } from '../../../store/favourite';
 
 const ProductItem = (props) => {
   const disPatch = useDispatch();
+
+  const itemIsFavourite = disPatch(favActions.itemIsFavourite(props.item.id));
+  const toggleFavouriteItem = () => {
+    if (itemIsFavourite) {
+      disPatch(favActions.removeFavouriteItem(props.item.id));
+    } else {
+      disPatch(
+        favActions.addFavouriteItem({
+          id: props.item.id,
+        })
+      );
+    }
+  };
 
   const price = `₹ ${props.item.price.toFixed(2)}`;
 
@@ -26,7 +40,7 @@ const ProductItem = (props) => {
   return (
     <Card key={props.item.title}>
       <div>
-        <HeartButton onHeartClick={props.onHeartClick} />
+        <HeartButton onClick={toggleFavouriteItem} />
       </div>
       <div>
         <Link to={`/product-detail/${props.item.id}`}>

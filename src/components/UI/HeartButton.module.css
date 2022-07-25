@@ -4,7 +4,7 @@
   margin: 5px;
 }
 
-.heart {
+.heart_nonselected {
   width: 20px;
   height: 20px;
   background-color: #e0e0e0;
@@ -13,8 +13,8 @@
   box-shadow: 0 2px 8px #e0e0e0;
 }
 
-.heart::before,
-.heart::after {
+.heart_nonselected::before,
+.heart_nonselected::after {
   width: 20px;
   height: 20px;
   background-color: #e0e0e0;
@@ -24,12 +24,43 @@
   box-shadow: 0 2px 8px #e0e0e0;
 }
 
-.heart::before {
+.heart_nonselected::before {
   bottom: 0px;
   left: -10px;
 }
 
-.heart::after {
+.heart_nonselected::after {
+  bottom: 0px;
+  top: -10px;
+}
+
+.heart_selected {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  position: relative;
+  transform: rotate(45deg);
+  border: 0;
+  box-shadow: 0 2px 8px red;
+}
+
+.heart_selected::before,
+.heart_selected::after {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px red;
+}
+
+.heart_selected::before {
+  bottom: 0px;
+  left: -10px;
+}
+
+.heart_selected::after {
   bottom: 0px;
   top: -10px;
 }

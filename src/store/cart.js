@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = { items: [], totalAmount: 0, favouriteItems: [] };
+const initialState = { items: [], totalAmount: 0 };
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -30,7 +30,6 @@ const cartSlice = createSlice({
       return {
         items: updatedItems,
         totalAmount: updatedTotalAmount,
-        favouriteItems: state.favouriteItems,
       };
     },
     removeItem(state, action) {
@@ -55,35 +54,13 @@ const cartSlice = createSlice({
       return {
         items: updatedItems,
         totalAmount: updatedTotalAmount,
-        favouriteItems: state.favouriteItems,
       };
     },
-    addFavouriteItem(state, action) {
-      let updatedFavouriteItem = [];
-      updatedFavouriteItem.push({
-        id: action.payload,
-      });
-      return {
-        items: state.items,
-        totalAmount: state.totalAmount,
-        favouriteItems: updatedFavouriteItem,
-      };
-    },
-    removeFavouriteItem(state, action) {
-      let updatedFavouriteItem = state.favouriteItems.filter(
-        (item) => item.id !== action.payload
-      );
-      return {
-        items: state.items,
-        totalAmount: state.totalAmount,
-        favouriteItems: updatedFavouriteItem,
-      };
-    },
+
     clearCart(state) {
       return {
         items: [],
         totalAmount: 0,
-        favouriteItems: state.favouriteItems,
       };
     },
   },

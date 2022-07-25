@@ -3,6 +3,7 @@ import { createSlice, configureStore } from '@reduxjs/toolkit';
 
 import cartReducer from './cart';
 import authReducer from './auth';
+import favReducer from './favourite';
 
 /* const initialState = { counter: 0, showCounter: false };
 const counterSlice = createSlice({
@@ -46,7 +47,7 @@ const authSlice = createSlice({
 export const authActions = authSlice.actions;  */
 
 const store = configureStore({
-  reducer: { cart: cartReducer, auth: authReducer },
+  reducer: { cart: cartReducer, auth: authReducer, favourite: favReducer },
 });
 
 export default store;
