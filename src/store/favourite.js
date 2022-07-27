@@ -11,7 +11,7 @@ const favSlice = createSlice({
   reducers: {
     addFavouriteItem(state, action) {
       let updatedFavouriteItem = [];
-      updatedFavouriteItem.concat({
+      updatedFavouriteItem = state.favouriteItems.concat({
         id: action.payload,
       });
       return {

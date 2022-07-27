@@ -26,11 +26,7 @@ const ProductItem = (props) => {
     if (itemIsFavourite) {
       disPatch(favActions.removeFavouriteItem(props.item.id));
     } else {
-      disPatch(
-        favActions.addFavouriteItem({
-          id: props.item.id,
-        })
-      );
+      disPatch(favActions.addFavouriteItem(props.item.id));
     }
   };
 

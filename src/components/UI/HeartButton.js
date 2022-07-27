@@ -6,7 +6,10 @@ const HeartButton = (props) => {
 
   return (
     <div className={classes.container}>
-      <div className={classes[cssClassName]} onClick={props.onHeartClick}></div>
+      <div
+        className={`${classes.heart} ${classes[cssClassName]}`}
+        onClick={props.onHeartClick}
+      ></div>
     </div>
   );
 };
