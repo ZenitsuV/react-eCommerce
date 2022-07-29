@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from './components/Layout/Header';
 import Products from './components/Products/Products';
 import NewProduct from './components/Products/NewProduct';
+import Favourites from './components/Products/Favourites/Favourites';
 import ProductDetail from './components/Products/ProductItem/ProductDetail';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
@@ -29,6 +30,7 @@ export default function App() {
             element={<ProductDetail />}
           />
           <Route path="/new-product" element={<NewProduct />} />
+          <Route path="/favourite-products" element={<Favourites />} />
         </Routes>
       </main>
     </div>

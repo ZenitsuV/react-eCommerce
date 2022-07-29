@@ -10,9 +10,14 @@ const Header = (props) => {
         <Link to="/" className={classes.logo}>
           <h1>Online Shopping</h1>
         </Link>
-        <Link to="/new-product" className={classes.nav}>
-          <h1>New Product</h1>
-        </Link>
+        <div className={classes.links}>
+          <Link to="/new-product" className={classes.nav}>
+            <h1>New Product</h1>
+          </Link>
+          <Link to="/favourite-products" className={classes.nav}>
+            <h1>Favourites</h1>
+          </Link>
+        </div>
         <HeaderCartButton onClick={props.onShowCart} />
       </header>
     </Fragment>

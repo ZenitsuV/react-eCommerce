@@ -8,6 +8,8 @@ const AddProductForm = () => {
   const typeInputRef = useRef();
   const descriptionInputRef = useRef();
 
+  let productID = Date.now();
+
   const submitHandler = (e) => {};
 
   return (
@@ -15,7 +17,7 @@ const AddProductForm = () => {
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor="id">Product ID</label>
-          <input type="text" required id="id" disabled />
+          <input type="text" value={productID} required id="id" disabled />
         </div>
         <div className={classes.control}>
           <label htmlFor="name">Product Name</label>
