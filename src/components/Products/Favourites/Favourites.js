@@ -12,9 +12,14 @@ const Favourites = (props) => {
   const favItemsID = favouriteItems.map((item) => item.id);
   const favItemList = data.filter((e) => favItemsID.includes(e.id));
 
-  const content = favItemList.map((item) => (
-    <FavouriteItem key={item.id} id={item.id} item={item} />
-  ));
+  let content;
+  if (favItemList.length > 0) {
+    content = favItemList.map((item) => (
+      <FavouriteItem key={item.id} id={item.id} item={item} />
+    ));
+  } else {
+    content = <p>No Items...</p>;
+  }
 
   return (
     <section className={classes.meals}>

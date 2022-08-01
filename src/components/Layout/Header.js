@@ -11,9 +11,17 @@ const Header = (props) => {
           <h1>Online Shopping</h1>
         </Link>
         <div className={classes.links}>
-          <Link to="/new-product" className={classes.nav}>
-            <h1>New Product</h1>
-          </Link>
+          <div className={classes.dropdown}>
+            <Link to="/new-product" className={classes.nav}>
+              <h1>New Product</h1>
+            </Link>
+            <div className={classes.dropdowncontent}>
+              <Link to="/" className={classes.nav}>
+                <h1>View</h1>
+              </Link>
+            </div>
+          </div>
+
           <Link to="/favourite-products" className={classes.nav}>
             <h1>Favourites</h1>
           </Link>
