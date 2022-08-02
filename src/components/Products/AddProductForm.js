@@ -1,7 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import classes from './AddProductForm.module.css';
+import useHttp from '../../hooks/use-http';
 
 const AddProductForm = () => {
+  const { isLoading, error, data, sendRequest, reqExtra, reqIdentifer, clear } =
+    useHttp();
+
   const nameInputRef = useRef();
   const imageInputRef = useRef();
   const priceInputRef = useRef();
@@ -10,7 +14,37 @@ const AddProductForm = () => {
 
   let productID = Date.now();
 
-  const submitHandler = (e) => {};
+  const submitHandler = (e) => {
+    e.preventDefault();
+    addProductHandler({
+      id: productID,
+      title: nameInputRef.current.value,
+      image:
+        'https://thumbs.dreamstime.com/b/shopping-basket-grocery-food-32542097.jpg',
+      price: priceInputRef.current.value,
+      type: typeInputRef.current.value,
+      description: descriptionInputRef.current.value,
+    });
+
+    nameInputRef.current.value = '';
+    imageInputRef.current.value = '';
+    priceInputRef.current.value = '';
+    typeInputRef.current.value = '';
+    descriptionInputRef.current.value = '';
+  };
+
+  const addProductHandler = useCallback(
+    (productObj) => {
+      sendRequest(
+        'https://react-ecommerce-e7c65-default-rtdb.firebaseio.com/ecommerce/products.json',
+        'POST',
+        JSON.stringify(productObj),
+        productObj,
+        'ADD_PRODUCT'
+      );
+    },
+    [sendRequest]
+  );
 
   return (
     <div className={classes.card}>
